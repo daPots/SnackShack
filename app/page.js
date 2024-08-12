@@ -192,10 +192,17 @@ export default function Home() {
               overflow: "auto",
               backgroundColor: "#89DAFF",
               direction: { xs: 'row', sm: 'column' },
-              alignItems: "flex-start",
+              alignItems: "center",
               justifyContent: "flex-start",
               padding: "20px",
               borderRadius: 2}}>
+                <Typography
+                  className={baloo.className}
+                  variant={"h3"} 
+                  color={"#109648"} 
+                  fontWeight={"800"}>
+                    Items:
+                </Typography>
                 {items.map((item) => (
                   //Each entry is a grid with Name, Quantity, and Add/Remove/Remove All buttons
                   <Grid
