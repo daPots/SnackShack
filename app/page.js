@@ -6,6 +6,7 @@ import {Box, Stack, Typography, Button, Grid, TextField, ImageList, ImageListIte
 import {collection, doc, addDoc, getDoc, getDocs, updateDoc, deleteDoc, onSnapshot, query, where} from "firebase/firestore"
 import {db} from './firebase'
 import { Baloo_2 } from 'next/font/google'
+import background from './images/background.png'
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -127,13 +128,18 @@ export default function Home() {
   return (
     // Main box
     <Box
+      sx={{
+        backgroundImage: `url(${background.src})`,
+        backgroundPosition: 'center', 
+        backgroundRepeat: 'repeat'
+      }}
       width="100vw"
       height="100vh"
       display={"flex"}
       justifyContent={"center"}
       flexDirection={"column"}
       alignItems={"center"}
-      backgroundColor={"#E7F59E"}>
+      >
       {/* Box for the title */}
       <Box
         sx={{ borderRadius: 5 }}
@@ -145,7 +151,7 @@ export default function Home() {
         <Typography
           className={baloo.className}
           variant={"h1"}
-          color={"#109648"}
+          color={"#2e7b31"}
           textAlign={"center"}
           fontWeight={"800"}>
             Snack Shack
@@ -227,7 +233,7 @@ export default function Home() {
           <Typography
             className={baloo.className}
             variant={"h3"}
-            color={"#109648"}
+            color={"#2e7b31"}
             fontWeight={"800"}>
               Items:
           </Typography>
